@@ -10,7 +10,6 @@ class Quiz {
 
     startQuiz() {
         const templateConfig = {
-            isQuestion: false,
             headingText: 'ようこそ',
             message: '以下のボタンをクリック',
             btn: '開始',
@@ -82,7 +81,6 @@ class Quiz {
         this._clearContent();
 
         const templateConfig = {
-            isLoad: false,
             isResult: true,
             headingText: 'あなたの正答数は',
             message: '再度チャレンジしたい場合は以下をクリック！！',
@@ -135,7 +133,6 @@ class Quiz {
         const question = document.createElement('p');
         const answerBtnWrap = document.createElement('div');
         const correctBtn = document.createElement('button');
-        const btnWrap = document.createElement('p');
         let answerBtns = [];
 
         heading.innerText = `問題${this.current + 1}`;
@@ -148,6 +145,7 @@ class Quiz {
         correctBtn.addEventListener('click', () => {
             this._correctCount();
         })
+
         const correctBtnWrap = document.createElement('p');
         correctBtnWrap.appendChild(correctBtn);
         answerBtns.push(correctBtnWrap);
@@ -183,6 +181,7 @@ class Quiz {
         content.appendChild(answerBtnWrap);
         content.classList.add('is-active');
         content.setAttribute('id', 'question');
+
         return content;
     }
 
