@@ -67,7 +67,6 @@ class Quiz {
                 this._setQuiz(this.quizLists);
             }).catch(error => {
                 alert('クイズの取得に失敗しました。');
-                console.error(error)
             })
     }
 
